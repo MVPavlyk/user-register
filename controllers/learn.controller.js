@@ -11,4 +11,8 @@ module.exports = {
             console.log(e);
         }
     },
+
+    checkConnect: (res) => {
+        res.json('Good connect').status(200)
+    }
 };
