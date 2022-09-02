@@ -4,7 +4,7 @@ module.exports = {
         try {
             console.log(req.body);
 
-            await sendMail(req.body.email);
+            await sendMail(req.body.sender_email);
 
             res.json('Coupon sent').status(200);
         } catch (e) {
