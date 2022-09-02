@@ -12,7 +12,10 @@ module.exports = {
         }
     },
 
-    checkConnect: (res) => {
+    checkConnect: (req, res) => {
+        console.log(req.body);
+        console.log(1111111111111111111111111111111111111111111111111111);
+
         res.json('Good connect').status(200)
     }
 };
