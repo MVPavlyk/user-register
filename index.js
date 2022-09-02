@@ -1,8 +1,14 @@
 const express = require('express');
 
+const path = require('path');
+
+require('dotenv').config({path: path.join(process.cwd(), 'environments', 'prod.env')});
+
 const {learnRouter} = require('./routes');
 
 const {constants} = require('./config');
+
+
 
 const app = express();
 

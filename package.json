@@ -6,14 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "run": "node index.js",
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.2",
     "express": "^4.18.1",
-    "liqpay-sdk-nodejs": "^1.0.3",
     "nodemailer": "^6.7.8",
+    "nodemon": "^2.0.19",
     "nodemailer-express-handlebars": "^5.0.0"
   }
 }
