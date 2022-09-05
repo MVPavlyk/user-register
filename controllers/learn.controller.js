@@ -3,14 +3,19 @@ const {config} = require('../config');
 module.exports = {
     sendCoupon: async (req, res) => {
         try {
-            const {order_status, sender_email} = req.body;
+            const {product_id, order_status, sender_email} = req.body;
 
 
             console.log(req.body);
 
 
             if (order_status === 'approved') {
-                await sendMail(sender_email, {link: config.PM_COURSE_URL});
+                if(product_id === 'pmCourse') {
+                    await sendMail(sender_email, {link: config.PM_COURSE_URL, title: "IT Project Management"});
+                }else if(product_id === 'tmCourse') {
+                    await sendMail(sender_email, {link: config.TM_COURSE_URL, title: "Text Mining"});
+                }
+
             }
 
 
@@ -22,7 +27,7 @@ module.exports = {
 
     checkConnect: (req, res) => {
         console.log(req.body);
-        console.log(111111111111111111111111111111111111111111111111111);
+        console.log(11111111111111111111111111111111111111111111111111);
 
         res.json('Good connect').status(200);
     }

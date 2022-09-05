@@ -28,7 +28,7 @@ module.exports = {
         transporter.use('compile', hbs(hbsOptions));
 
         const templateInfo = {
-            subject: 'Welcome om board',
+            subject: 'Вітаємо на курсі',
             template: 'sendCoupon'
         };
 
