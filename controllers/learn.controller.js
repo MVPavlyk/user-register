@@ -1,13 +1,16 @@
 const {sendMail} = require('../services/email.service');
+const {config} = require('../config');
 module.exports = {
-    getData: async (req, res) => {
+    sendCoupon: async (req, res) => {
         try {
-            // console.log(req.body);
             const {order_status, sender_email} = req.body;
 
 
+            console.log(req.body);
+
+
             if (order_status === 'approved') {
-                await sendMail(sender_email);
+                await sendMail(sender_email, {link: config.PM_COURSE_URL});
             }
 
 
@@ -19,7 +22,7 @@ module.exports = {
 
     checkConnect: (req, res) => {
         console.log(req.body);
-        console.log(1111111111111111111111111111111111111111111111111111);
+        console.log(111111111111111111111111111111111111111111111111111);
 
         res.json('Good connect').status(200);
     }
